@@ -4,10 +4,9 @@ import { Row, Form, Button } from "react-bootstrap";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
-const pinataApiKey = "24f2aa85c4be2bff9f12";
-const pinataSecretApiKey =
-  "c830afcd8b72b4fa9dff5d50724ac96b491fc0f4fd92fb589b097d8fcaa4e973";
 const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
+const pinataApiKey = process.env.PINATA_API_KEY;
+const pinataSecretApiKey = process.env.PINATA_SECRET;
 
 const Create = ({ marketplace, nft }) => {
   const [image, setImage] = useState("");
